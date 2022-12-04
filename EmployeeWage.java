@@ -10,11 +10,14 @@ public class EmployeeWage {
 	int PartTimeHours = 0;
 	int TotalWage = 0;
 	int Monthly_working_Day = 20;
+	int Monthly_hours = 100;
+	int TotalWorkingHours = 0;
+	int totalEmpHours = 0;
 	
 	public void DailyWage() {
 		
-		for(int day = 0; day < Monthly_working_Day; day ++ ) {
-		
+		while(totalEmpHours < Monthly_hours && TotalWorkingHours < Monthly_working_Day ) {
+		TotalWorkingHours++;
 		int empWage = (int)(Math.floor (Math.random()*5)%3);
 		switch (empWage) {
 		case 1:
@@ -23,6 +26,8 @@ public class EmployeeWage {
 			Wage = WagePerHours * FullDayHours;
 			System.out.println("Employee FullTime Wage is : " + Wage);
 			TotalWage = TotalWage + Wage;
+			totalEmpHours = totalEmpHours + FullDayHours;
+			System.out.println("Days : " + TotalWorkingHours + "Hours : " + FullTime);
 			break;
 		case 2:
 			System.out.println("Employee present in Part time");
@@ -30,6 +35,8 @@ public class EmployeeWage {
 			Wage = WagePerHours * PartTime;
 			System.out.println("Employee PartTime Wage is : " + Wage);
 			TotalWage = TotalWage + Wage;
+			totalEmpHours = totalEmpHours + FullDayHours;
+			System.out.println("Days : " + TotalWorkingHours + "Hours : " + PartTime);
 			break;
 		default :
 			System.out.println("Employee is Absent");
@@ -39,7 +46,6 @@ public class EmployeeWage {
 		}		
 		
 		System.out.println("Total Monthly wage is in Rupees: " + TotalWage);
-
 	}
 	
 }
