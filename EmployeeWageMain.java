@@ -7,6 +7,6 @@ public class EmployeeWageMain {
 		System.out.println("Welcome to Employee Wage Computation Program");
 	
 		EmployeeWage obj = new EmployeeWage();
-		obj.DailyWage(); 
+		obj.DailyWage();
 	}
 }
